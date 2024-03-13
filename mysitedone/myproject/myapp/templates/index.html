@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="mb-4">Список постов</h1>
+    <ul class="list-group">
+        {% for post in posts %}
+        <li class="list-group-item">
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.content }}</p>
+            <small>{{ post.date_posted }}</small>
+        </li>
+        {% empty %}
+        <li class="list-group-item">Пока нет постов.</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
